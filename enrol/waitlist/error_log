@@ -1,0 +1,4 @@
+[26-Mar-2020 08:46:50 Europe/London] PHP Fatal error:  Uncaught Error: Call to undefined function optional_param() in /home/im9d1t2zstv1/lms.darakhtdanesh.org/enrol/waitlist/faculty.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/im9d1t2zstv1/lms.darakhtdanesh.org/enrol/waitlist/faculty.php on line 21

@@ -1,0 +1,1692 @@
+/* =========================================================== *
+General Layout
+============================================================== */
+html{
+	height:100%;
+	min-height:100%;
+}
+body{
+    background: url([[setting:pagebackground]]) [[setting:background-repeat]];
+	background-size: [[setting:background-size]];
+	position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 25px;
+    text-shadow: none !important;
+    color: #444;
+    padding-top: 35px;
+}
+#wrapper{
+	width:90%;
+	max-width: [[setting:pagewidth]];
+	margin:0 auto;
+	background:#ffffff;
+	border-top:4px solid [[setting:maincolor]];
+}
+h1, h2, h3, h4, h5, h6,
+.back-to-top,
+.socials p,
+#socialheading,
+.forumpost .subject {
+    font-family: "[[setting:headingfont]]", sans-serif;
+	color:#555;
+}
+body,
+.block_login input[type="submit"], input, button, select, textarea {
+    font-family: "[[setting:bodyfont]]", Arial, Helvetica, sans-serif;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 2px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal !important;
+}
+h3 {
+    font-size: 1.4em;
+    line-height: 20px;
+}
+h6 {
+	text-transform:uppercase;
+}
+a, a:visited, a.active, a:focus, #page-mod-scorm-player .breadcrumb-button a {
+    color: [[setting:linkcolor]];
+	text-decoration: none;
+}
+a:hover {
+	color: #222;
+	transition: all 0.3s ease 0.1s;
+	text-decoration: none;
+}
+.block ul.block_tree a, .breadcrumb a, .instancename {
+	color:#444;
+}
+.dir-rtl a.logo {
+    display: block;
+    float: right;
+}
+.sitetopic .section .activity:hover, .course-content .section .activity:hover {
+    background: none;
+}
+#page {
+	padding-top: 10px;
+}
+img.iconsmall {
+    height: inherit;
+	margin: 0;
+    vertical-align: inherit;
+    width: inherit;
+}
+.bor {
+    height: 20px;
+    margin: 0px;
+    margin-bottom: 20px;
+    background: url([[pix:theme|bg/dot]]) repeat-x;
+}
+.topbor {
+    height: 20px;
+    margin-bottom: 10px;
+    background: url([[pix:theme|bg/dot]]) repeat-x;
+}
+.side-pre {
+    border: 1px solid #333;
+}
+.span12#move {
+    margin-top: -30px;
+}
+.mform fieldset.collapsible legend a.fheader {
+	margin-left:0;
+}
+.form-item .form-label, .mform .fitem div.fitemtitle, .userprofile dl.list dt, .form-horizontal .control-label {
+width:180px;
+}
+.form-item .form-setting, .form-item .form-description, .mform .fitem .felement, #page-mod-forum-search .c1, .mform .fdescription.required, .userprofile dl.list dd, .form-horizontal .controls {
+    margin-left: 200px;
+}
+fieldset.coursesearchbox {
+    display: none;
+}
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd, .moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+    background: none repeat scroll 0 0 #F2F2F2;
+}
+#page-mod-forum-discuss .discussioncontrols {
+    margin: 5px;
+}
+/* Negate core style when using 'interesting' layout so that browser renders drop target
+   correctly. */
+.empty-region-side-pre #block-region-side-pre, .empty-region-side-post #block-region-side-post {
+    display: block;
+}
+.back-to-top [class^="icon-"] {
+	font-size: 3em;
+}
+.back-to-top{
+	position: fixed;
+	bottom: 2em;
+	left: 92%;
+	display: none;
+	text-align:center; 
+	font:11px/100%; 
+	text-transform:uppercase; 
+	text-decoration:none; 
+	color:[[setting:maincolor]];
+}
+.back-to-top p{
+	display: none;
+}
+.back-to-top:hover{
+	color:[[setting:mainhovercolor]];
+	text-decoration: none;
+}
+
+/* =========================================================== *
+Header
+============================================================== */
+#page-header {
+    padding: 12px 0;
+}
+
+h2.main,
+#pageheading {
+    font-size: 1.4em;
+    line-height: 35px;
+    color: #777;
+    border-bottom: 1px solid #e1e1e1;
+}
+h1#title {
+	color: [[setting:maincolor]];
+	white-space: nowrap;
+	font-size: 2.1em;
+}
+h2#subtitle {
+	font-size: 1em;
+	margin-top: -24px;
+	letter-spacing: .15em;
+	white-space: nowrap;
+}
+.logo-header {
+    float:left;
+}
+img.logo {
+    max-width:100%;
+}
+#page-navbar {
+	margin-top: -30px;
+	position:relative;
+	z-index:0;
+}
+.breadcrumb-button input[type="submit"]{
+	background: [[setting:maincolor]];
+	color: #fff;
+	text-shadow: none;
+	border: 0px none;
+}
+.breadcrumb-button input[type="submit"]:hover {
+	background: [[setting:mainhovercolor]];
+}
+.breadcrumb-button a{
+    color: #fff;
+}
+#block-login{
+	width:234px;
+	height:80px;
+	padding:10px;
+	background:#f4f4f4;
+	border:1px solid #eee;
+}
+.login-header {
+    width: 256px;
+	float:right;
+}
+#block-login label, #submit{
+	position:absolute;
+	width:33px;
+	height:34px;
+	background:#E5E5E5;
+	margin:0;
+	text-align:center;
+	line-height:2.2em;
+	color:#666666;
+	border-top-left-radius:2px;
+	border-bottom-left-radius:2px;
+	font-size:1.2em;
+}
+#submit{
+	margin:-34px 200px;
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+	border-top-right-radius:2px;
+	border-bottom-right-radius:2px;
+	background:url([[pix:theme|bg/login]]) no-repeat 50% 50% [[setting:def_buttoncolor]];
+	box-shadow:none;
+	padding:0;
+}
+#submit:hover, #submit:focus{
+	transition: all 0.3s ease 0.1s;
+	background:url([[pix:theme|bg/login]]) no-repeat 50% 50% [[setting:def_buttonhovercolor]];
+}
+#block-login input[type=text],#block-login input[type=password]{
+	width:232px;
+	height:34px;
+	padding:0 38px;
+	border:0;
+	margin:0;
+	border-radius:2px;
+	display:block;
+	color:#626262;
+}
+#submit-caption {
+	color:#fff;
+}
+input{padding-left:40px;}
+#block-login:active > #block-login:before{
+	background-position:100px 100px;
+}
+#loggedin-user {
+	background:#f4f4f4;
+	border:1px solid #eee;
+	width:234px;
+	height:90px;
+	float:right;
+	padding: 10px 10px 0 10px;
+	position:relative;
+}
+#loggedin-user .profilepic {
+	float: right;
+}
+.logininfo, .logininfo a {
+	font-size:1.25em;
+	color:[[setting:maincolor]];
+    font-weight: bold;
+    line-height: 1.15em;
+	word-wrap: break-word;
+}
+ul.profiledrop {
+	background-color:#fff;
+	border-radius:2px;
+	border:1px solid #dedede;
+	box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);
+	margin: 2px 0 0;
+    min-width: 160px;
+	padding: 5px 0;
+}
+ul.profiledrop li {
+	border:none;
+}
+ul.profiledrop .divider {
+    background-color: #E5E5E5;
+    border-bottom: 1px solid #FFFFFF;
+    height: 1px;
+    margin: 9px 1px;
+    overflow: hidden;
+}
+#loggedin-user .nav .dropdown-toggle .caret {
+    border-left: 8px solid rgba(102, 102, 102, 0);
+    border-right: 8px solid rgba(102, 102, 102, 0);
+    border-top: 8px solid #666666;
+    content: "";
+    display: inline-block;
+}
+ul.profiledrop li a {
+	border:none;
+	color:#444;
+	font-size:0.8em;
+	line-height:1em;
+	padding:3px 10px;	
+	clear: both;
+    display: block;
+    font-weight: normal;
+    white-space: nowrap;
+}
+ul.profiledrop li a i {
+    color: #999999;
+    margin-right: 8px;
+    width: 12px;
+}
+ul.profiledrop > li > a:hover, ul.profiledrop > li > a:focus {
+	background-image:none;
+	background-color:#e5e5e5;
+	color:#444;
+}
+
+/* =========================================================== *
+Navbar
+============================================================== */
+.breadcrumb {
+    padding: 0px;
+    color: #555;
+    font-size: .9em;
+    background: transparent;
+    margin: 0px;
+}
+.breadcrumb-button {
+    margin-top: -4px;
+}
+ul.breadcrumb span.divider {
+	display: none;
+}
+.breadcrumb > li {
+    display: inline;
+}
+ul.breadcrumb li:after { 
+	content: "\f105";
+	font-family: FontAwesome;
+	font-size: 1.1em;
+	margin: 0px 6px 0px 3px;
+	color: #bbb;
+}
+ul.breadcrumb li:last-child:after { 
+	content: none; 
+}
+.navbar {
+    margin-bottom: 0px;
+    background-image: none;
+	padding: 0 20px;
+}
+.navbar a {
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+.navbar a:hover {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.navbar-inner {
+	background:[[setting:menufirstlevelcolor]];
+	border:0;
+	padding-left:0;
+	padding-right:0;
+	border-radius:0;
+	filter:none !important;
+    background-image:none !important;
+}
+.navbar .brand {
+    color: #fff;
+    text-shadow: none;
+    line-height: 30px;
+	font-size:1em;
+	background:[[setting:maincolor]];
+}
+.navbar .brand:hover {
+    background:[[setting:mainhovercolor]];
+}
+.navbar .nav>li>a {
+	color:[[setting:menufirstlevel_linkcolor]];
+	text-shadow: none;
+    border-left: 1px solid rgba(250, 250, 250, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+	padding:10px 18px;
+}
+.navbar .nav {
+	margin:0;
+}
+.navbar .nav>li {
+	line-height:30px;
+}
+.navbar .nav>li>a:focus,.navbar .nav>li>a:hover,.navbar .nav>.active>a,.navbar .nav>.active>a:hover,.navbar .nav>.active>a:focus, .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	color:[[setting:menufirstlevel_linkcolor]];
+	text-decoration:none;
+	background-color:[[setting:mainhovercolor]];
+}
+.navbar .btn-navbar {
+    background-color: [[setting:maincolor]];
+    background-image: none;
+    background-repeat: repeat-x;
+    border-color: [[setting:maincolor]];
+    box-shadow: none;
+    color: [[setting:menufirstlevel_linkcolor]];
+    float: right;
+    margin-left: 5px;
+    margin-right: -10px;
+    margin-top: 7px;
+    padding: 10px;
+    text-shadow: none;
+}
+.navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
+    background-color: [[setting:mainhovercolor]];
+    color: [[setting:menufirstlevel_linkcolor]];
+}
+.navbar .dropdown-menu > li > a:hover, .navbar .dropdown-menu > li > a:focus {
+	background-image:none;
+	background-color:[[setting:mainhovercolor]];
+	color: [[setting:menufirstlevel_linkcolor]] !important;
+}
+.navbar .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+	background-image:none;
+	background-color:[[setting:menusecondlevelcolor]];
+	color: [[setting:menusecondlevel_linkcolor]];
+}
+.navbar .dropdown-submenu:hover > a:after, .dropdown-submenu:focus > a:after {
+	border-color: transparent transparent transparent #ccc;
+}
+.navbar .dropdown-submenu > .dropdown-menu {
+    border-radius: 0;
+}
+.navbar .caret {
+    border-top-color: [[setting:menufirstlevel_linkcolor]] !important;
+    border-bottom-color: [[setting:menufirstlevel_linkcolor]] !important;
+}
+.path-mod-data .navbar form {
+    margin-top: 0;
+}
+.navbar #search {
+	margin-right:-20px;
+	overflow:hidden;
+	position:relative;
+	float:right;
+	padding:0;
+}
+.navbar #search input {
+	background:[[setting:menufirstlevelcolor]];
+	border:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	color:[[setting:menufirstlevel_linkcolor]];	
+	margin:0;
+	padding:10px;
+	height:50px;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	float:left;
+	font-size:12px;
+	font-style:italic;
+}
+.navbar #search input:focus {
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+.navbar #search input[type="submit"] {
+	display:inline-block;
+	float:left;
+	background:[[setting:maincolor]] url([[pix:theme|bg/icon-search]]) no-repeat center center;
+	width:50px;
+	height:50px;
+	-webkit-transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+	transition:all 0.3s ease;
+}
+.navbar #search input[type="submit"]:hover {
+	background: [[setting:mainhovercolor]] url([[pix:theme|bg/icon-search]]) no-repeat center center;
+}
+.navbar .nav .dropdown-toggle .caret {
+	margin-top:13px;
+}
+.navbar .dropdown-menu {
+	border:0px;
+	border-radius:0;
+	background-color:[[setting:menusecondlevelcolor]];
+}
+.navbar .nav>li>.dropdown-menu:before {
+	border-bottom:7px solid transparent;
+}
+.navbar .nav>li>.dropdown-menu:after {
+	border-bottom:4px solid transparent;
+}
+.navbar .dropdown-menu>li>a {
+	color:[[setting:menusecondlevel_linkcolor]];
+	border-top:1px solid rgba(250, 250, 250, 0.1);
+	border-bottom:1px solid rgba(0, 0, 0, 0.2);
+	padding:8px 20px;
+}
+.navbar .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:active  {
+	color:[[setting:menusecondlevel_linkcolor]];
+}
+.navbar .dropdown-menu {
+	padding:0px;
+	margin-left:-2px;
+	margin-top:0px;
+	border-bottom:4px solid [[setting:maincolor]];
+}
+.slidershadow {
+	height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+	position:relative;
+	z-index:0;
+}
+.navbar .nav-divider-right {
+	height:50px;
+	border-left:1px solid rgba(250, 250, 250, 0.1);
+	margin:0;
+	float: left;
+}
+.navbar .nav-divider-left {
+	float:left;
+	height:50px;
+	border-right:1px solid rgba(250, 250, 250, 0.1);
+	border-left:1px solid rgba(0, 0, 0, 0.2);
+	margin:0;
+}
+.navbar .open > .dropdown-menu {
+    overflow: visible !important;
+}
+
+/* =========================================================== *
+Course
+============================================================== */
+.coursebox {
+    border: 1px solid #eee;
+	border-radius:0;
+	border-left:2px solid [[setting:maincolor]];
+}
+.coursebox > .info > h3.coursename {
+    float: left;
+}
+.coursebox > .info > .coursename a, .coursebox > .info > .name a {
+	background-image:none;
+	padding:0;
+	color:#444;
+}
+.coursebox > .info > .coursename a.dimmed {
+    color: #999;
+}
+.coursebox.collapsed > .info > .coursename a {
+    line-height: 1em;
+}
+.coursebox > .info > .coursename a:before, .coursebox > .info > .name a:before {
+    background-color: [[setting:maincolor]];
+    content: "\f090";
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    height: 1.35em;
+	line-height:1.35em;
+    margin-right: 0.5em;
+    margin-top: -0.2em;
+    padding-top: 0.1em;
+    text-align: center;
+    width: 1.5em;
+}
+.course-content ul li.section.main {
+    border-bottom: 0px none;
+    background: url([[pix:theme|bg/dot]]) bottom repeat-x;
+	padding:10px 0 !important;
+}
+.course-content .current {
+    background-color: #FCF8E3 !important;
+}
+.course-content .current .content {
+    background-color: #fff;
+}
+.course_category_tree .category > .info {
+    border-radius: 2px;
+    margin: 3px 0 8px;
+}
+.section li.activity {
+    clear: none;
+}
+.section .label .contentwithoutlink, .section .label .activityinstance {
+    padding-right: 0;
+}
+.path-site li.activity > div, .path-course-view li.activity > div {
+    padding: 0;
+}
+.path-course-view .completionprogress {
+    float: inherit;
+}
+#page-course-index-category .generalbox.info {
+    border: none;
+}
+.no-overflow {
+    overflow: auto;
+	padding-bottom: 1px;
+}
+.mod-indent-outer .no-overflow, .mod-indent .no-overflow {
+    overflow: inherit;
+}
+h2.pagetitle {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2em;
+    line-height: 35px;
+    color: #777;
+    background: url([[pix:theme|bg/dot]]) left center repeat-x;
+    background-size: 20px 3px;
+}
+.firstword {
+    color: [[setting:maincolor]] !important;
+    margin-right: -5px;
+}
+.left.side {
+    display: none;
+}
+.editing .left.side {
+    display: inline;
+}
+.label, .badge {
+	font-weight: normal;
+}
+table.flexible th, .generaltable th, table.flexible td, .generaltable td {
+    padding: 4px;
+    vertical-align: middle;
+}
+.path-grade-report-grader .gradeparent {
+    line-height: 1.4em;
+    overflow: auto;
+}
+.path-grade-report-grader .gradeparent .floating {
+    display: block !important;
+}
+.path-grade-report-grader .floater.avg.floating {
+    margin-bottom: 2.1em;
+}
+.path-grade-report-grader .gradeparent .floater {
+    display: none;
+}
+.path-grade-report .gradeparent tr .cell {
+    border-radius: 0;
+}
+.path-grade-report-grader .gradeparent .heading .cell, .path-grade-report-grader .gradeparent .avg .cell, .path-grade-report-grader .gradeparent .user.cell {
+    font-size: inherit;
+}
+.path-grade-report .floating .iconsmall.sorticon {
+    height: 12px;
+    width: 12px;
+}
+.gradingtable input {
+    width: 100px;
+}
+.gradingform_rubric.view {
+    float: none;
+    overflow: visible;
+    height: inherit;
+    width: inherit;
+}
+.path-mod-assign .gradingtable tr:nth-child(2n+1).unselectedrow td {
+    background-color: #f9f9f9;
+}
+.ygtvtable td {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+td.ygtvcell {
+    padding: 0 !important;
+}
+.ygtvcontent a {
+    display: block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+	margin-left: 8px;
+    margin-right: 8px;
+}
+.course-content ul.ctopics li.section .content .toggle {
+    border-radius: 2px;
+    margin-bottom: 8px;
+}
+.course-content ul.topics li#section-0 {
+    padding-top: 0 !important;
+}
+.course-content ul li.section.main {
+	border: medium none;
+}
+.course-content .section-summary .section-title:before {
+	color: [[setting:maincolor]];
+	font-family: FontAwesome;
+	content: "\f0fe";
+	margin-right: 6px;
+}
+#section_footer > a#next_section {
+    float: right;
+}
+#section_footer > a#previous_section {
+    float: left;
+}
+.fa-chevron-circle-left:before, .fa-chevron-circle-right:before {
+    color: [[setting:maincolor]];
+    font-size: 1.5em;
+}
+
+/* =========================================================== *
+Blocks
+============================================================== */
+.block {
+    background: #E5E5E5;
+    padding: 12px;
+    border: none;
+    margin-bottom: 10px;
+	box-shadow:none;
+	border-radius:3px;
+}
+.block .content {
+    padding: 6px;
+}
+.block .content hr {
+    border: medium none;
+    margin: 5px 0;
+	background: url([[pix:theme|bg/block-divider]]) repeat-x scroll left bottom;
+}
+.block #icon {
+	margin-right: 5px;
+	color: #999;
+}
+.hidden-blocks {
+    background: #ffe1e1;
+    padding: 10px;
+    border: 1px solid #EEE;
+    border-radius: 3px;
+    margin: 10px 0px 10px 0px; 
+}
+.hidden-blocks h4 {
+    text-align: left;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 0px;
+    color: #ff6666;
+}
+.hidden-blocks .block {
+    float: right;
+    width: 250px;
+    margin-left: 10px;
+}
+.block .header .title h2,
+.block h3.main {
+    font-size: 1.15em;
+    color: #666;
+    line-height: 26px;
+    font-weight: normal;
+    padding: 7px 0;
+	text-transform:none;
+	display: inline;
+}
+.block .header .title h2, .block h3 {
+	text-shadow: none;
+}
+#page-footer .block .header .title h2:before {
+    display: none;
+}
+#page-footer .block .header .title h2:after {
+    background-color: [[setting:maincolor]];
+    content: "";
+    display: block;
+    height: 1px;
+    position: relative;
+    top: 6px;
+    width: 100px;
+}
+.block .header .title {
+    padding-left: 0px;
+	padding-bottom: 5px;
+	background: url([[pix:theme|bg/block-divider]]) repeat-x scroll left bottom;
+}
+.block .header .block_action {
+    padding: 1px;
+}
+.block .header .block_action input {
+    padding-left: 0;
+}
+.block.hidden .header .title h2,
+.block.hidden h3.main,
+.block.hidden .header .title {
+	border-bottom: none;
+	margin-bottom: 0px;
+}
+.block_quiz_results {
+    text-align: left;
+}
+.block_rss_client .decription {
+	height: auto;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+.block_rss_client .content {
+	padding: 0px;
+}
+.block_rss_client .footer {
+	text-align: right;
+	padding-top: 5px;
+}
+.block_rss_client .content ul.list {
+    margin-top: 10px !important;
+}
+.block_rss_client .content ul.list li {
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+}
+#page-footer .block_rss_client .content ul.list li {
+    margin-top: 10px;
+}
+#page-footer .block_rss_client .content ul.list li {
+    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+}
+.block_login input[type="text"],
+.block_login input[type="password"] {
+	width: 95% !important;
+}
+.block .header .title .commands, .block_adminblock .content, .block .footer {
+	padding:0;
+}
+#page-footer ul.menubar, #greyboxright ul.menubar {
+	float:right;
+	margin: -25px 0;
+}
+.user-enroller-panel {
+	z-index:999;
+}
+
+/* =========================================================== *
+Frontpage
+============================================================== */
+#site-news-forum,
+#frontpage-course-list,
+#frontpage-category-combo,
+#frontpage-category-names {
+	background: url([[pix:theme|bg/dot]]) left top repeat-x;
+	background-size: 20px 3px;
+	padding-top: 20px;
+}
+
+/* =========================================================== *
+Footer
+============================================================== */
+#page-footer {
+    background: [[setting:footercolor]];
+    margin-top: 10px;
+    font-size: 1em;
+    padding-top: 10px;
+	padding-bottom:0;
+    color: [[setting:footertextcolor]];
+    border-top: 3px solid [[setting:maincolor]];
+    text-align: left;
+}
+#page-footer .content a, #page-footer .footerlinks a {
+    color: [[setting:maincolor]];
+}
+.helplink {
+    float: right;
+    padding-right: 20px;
+}
+.helplink a {
+    color: orange !important;
+}
+#page-footer .footnote a,
+#page-footer .footnote a:visited {
+    color: [[setting:maincolor]] !important;
+}
+#page-footer .footnote a:hover {
+    color: [[setting:mainhovercolor]] !important;
+    text-decoration: none;
+}
+#page-footer .container {
+    margin-right: auto;
+    margin-left: auto;
+}
+#page-footer .copy {
+	padding-left: 20px;
+	float: left;
+}
+#page-footer .footnote {
+	float: left;
+	color: [[setting:footertextcolor]];
+	margin-left: 20px;
+}
+#page-footer .span4 {
+	padding: 30px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+#page-footer hr {
+	display:none;
+}
+#page-footer h4 {
+    font-size: 1.2em;
+    padding-bottom: 6px;
+    border-bottom: 1px solid [[setting:copyrightcolor]];
+    margin-bottom: 4px;
+    color: [[setting:footerheadingcolor]];
+}
+#page-footer h5, #page-footer h6 {
+	color: [[setting:footertextcolor]];
+}
+#page-footer ul,
+#greyboxright ul {
+    list-style-type: none !important;
+    margin: 0px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+#page-footer ul li,
+#greyboxright ul li {
+    padding: 4px 0px;
+    padding-left: 0px;
+}
+#page-footer .tree_item.branch:before {
+	color: [setting:maincolor]];
+}
+.footerlinks {
+	line-height: 15px;
+	background: [[setting:copyrightcolor]];
+	border-top:1px solid #444444;
+	padding: 10px 0;
+}
+#page-footer .block {
+	    border: 0px none;
+	    background: transparent;
+	    width: 100%;
+	    padding: 0px;
+}
+#page-footer .block .header .title h2 {
+	    color: [[setting:footerheadingcolor]];
+}
+#page-footer .block .header .block_action {
+	    display: none !important;
+}
+#page-footer .block .header .title {
+	    border-bottom: 1px solid [[setting:footertextcolor]];
+		background:none;
+}
+#page-footer .block .minicalendar td.weekend {
+    color: [[setting:footerheadingcolor]];
+}
+	
+/* =========================================================== *
+Profile
+============================================================== */
+.myprofileitem.picture {
+    width:100px;
+    height:100px;
+    margin:10px auto;
+    background:#eee;
+    border:5px solid #fff;
+    box-shadow:0px 0px 3px #aaa;
+    text-align:center;
+    -webkit-transition:border 1s ease;
+    -moz-transition:border 1s ease;
+    -o-transition:border 1s ease;
+    transition:border 1s ease;
+}
+.myprofileitem.picture:hover{
+    -webkit-transition:border 1s ease;
+    -moz-transition:border 1s ease;
+    -o-transition:border 1s ease;
+    transition:border 1s ease;
+    border:5px solid [[setting:maincolor]];
+}
+img.profilepicture
+{
+    width:120px;
+    height:120px;
+}
+
+/* =========================================================== *
+Quiz
+============================================================== */
+#page-mod-quiz-edit div.quizcontents {
+	clear: left;
+	display: block;
+	float: left;
+	width: 67%;
+}
+#quizcontentsblock form.quizsavegradesform label {
+	display:inline;
+}
+.points label {
+    font-size: 12px;
+    line-height: 1em;
+}
+#page-mod-quiz-edit div.question div.content div.points {
+	right:50px;
+	margin-top:0;
+    position: static;
+    max-width: 100%;
+}
+#page-mod-quiz-edit .questioncontentcontainer a.questioneditbutton .questiontext {
+    display: none !important;
+}
+#page-mod-quiz-edit div.question div.content .questionname, #categoryquestions .questionname {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#page-mod-quiz-edit .questionbankwindow.block div.header {
+	background: [[setting:maincolor]];
+	margin: 0px;
+	border-radius: 3px;
+}
+.questionbankwindow.block .header .title h2:before {
+	color: #fff;
+	content: "\f128";
+}
+#categoryquestions .checkbox {
+    padding-left: 10px;
+}
+#categoryquestions .questiontext p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#categoryquestions .radio input[type="radio"], #categoryquestions .checkbox input[type="checkbox"] {
+    float: inherit;
+    margin-left: -15px;
+}
+#page-mod-quiz-edit div.questionbank .categoryquestionscontainer {
+    margin: 0;
+}
+#categoryquestions .qtype {
+    text-align: left;
+    width: 20px;
+}
+.questionbankwindow.block {
+    background: white;
+    padding: 0px, 12px;
+    border-radius: 3px;
+    border: 1px solid #E1E1E1;
+    margin-bottom: 10px;
+	width: 28%;
+}
+.questionbankwindow.block .header .title {
+	border-bottom: 0px none;
+}
+#page-mod-quiz-edit .questionbankwindow div.header .title {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    padding: 0;
+}
+#page-mod-quiz-edit .questionbankwindow a#showbankcmd:hover, #page-mod-quiz-edit .questionbankwindow a#hidebankcmd:hover {
+    background-color: [[setting:maincolor]];
+    color: [[setting:mainhovercolor]];
+    text-decoration: none;
+}
+
+/* =========================================================== *
+Blockicons by Shaun Daubney (theme_aardvark)
+============================================================== */
+.block .header .title h2:before {
+    border-radius: 3px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.35em;
+    height: 1.35em;
+    margin-left: -0.35em;
+    margin-right: 0.5em;
+    margin-top: -0.2em;
+    padding-top: 0.1em;
+    text-align: center;
+    width: 1.5em;
+	background-color: [[setting:maincolor]];
+	content: "\f069";
+}
+.block_html .header .title h2:before {
+    background-color: #8EC63F;
+	content: "\f05a";
+}
+.block_news_items .header .title h2:before {
+    background-color: #29A294;
+	content:"\f0a1";
+}
+.block_navigation .header .title h2:before {
+    background-color: #EB3D00;
+    content:"\f0e8";
+}
+.block_calendar_upcoming .header .title h2:before,
+.block_calendar_month .header .title h2:before {
+    background-color: #008ecd;
+	content:"\f073";
+}
+.block_course_list .header .title h2:before {
+    background-color: #ffce00;
+	content:"\f108";
+}
+.block_completionstatus .header .title h2:before,
+.block_selfcompletion .header .title h2:before {
+    background-color: #76b900;
+	content:"\f0e4";
+}
+.block_rss_client .header .title h2:before {
+    background-color: #008ecd;
+	content:"\f09e";
+}
+.block_rss_plus .header .title h2:before {
+    background-color: #ff9500;
+	content:"\f09e";
+}
+.block_blog_menu .header .title h2:before {
+    background-color: #ff9500;
+	content:"\f02d";
+}
+.block_quiz_results .header .title h2:before {
+    background-color: #008ecd;    
+	content:"\f080";
+}
+.block_quiz_navblock .header .title h2:before {
+    background-color: #76b900;
+    content:"\f126";
+}
+.block_glossary_random .header .title h2:before {
+    background-color: #008ecd;
+    content:"\f0eb";
+}
+.block_book_toc .header .title h2:before {
+    background-color: #76B900;
+    content:"\f02d";
+}
+.block_participants .header .title h2:before,
+.block_online_users .header .title h2:before {
+    background-color: #92499e;
+    content:"\f0c0";
+}
+.block_section_links .header .title h2:before {
+    background-color: #EB3D00;
+    content:"\f02e";
+}
+.block_activity_modules .header .title h2:before {
+    background-color: #EB3D00;
+    content:"\f12e";
+}
+.block_comments .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f075";
+}
+.block_settings .header .title h2:before,
+.block_admin_bookmarks .header .title h2:before{
+    background-color: #BD1A8D;
+    content:"\f085";
+}
+.block_blog_tags .header .title h2:before,
+.block_tags .header .title h2:before {
+    background-color: #ff9f00;
+    content:"\f02c";
+}
+.block_private_files .header .title h2:before {
+    background-color: #38B9EC;
+    content:"\f114";
+}
+.block_block_mentees .header .title h2:before {
+    background-color: #76B900;
+    content:"\f0c0";
+}
+.block_messages .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f0e0";
+}
+.block_community .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f0ac";
+}
+.block_login .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f007";
+}
+.block_recent_activity .header .title h2:before {
+    background-color: #38B9EC;
+    content:"\f017";
+}
+.block_search_forums .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f0e6";
+}
+.block_myprofile .header .title h2:before {
+    background-color: #EB3D00;
+    content:"\f007";
+}
+.block_adminblock .header .title h2:before {
+    background-color: #76B900;
+    content:"\f0fe";
+}
+.block_feedback .header .title h2:before {
+    background-color: #ffce00;
+    content:"\f087";
+}
+.block_flickr .header .title h2:before {
+    background-color: #ff3096;
+    content:"\f03e";
+}
+.block_youtube .header .title h2:before {
+    background-color: #EB3D00;
+    content:"\f145";
+}
+.block_course_badges .header .title h2:before {
+    background-color: #29a294;
+    content:"\f091";
+}
+.block_twitter_search .header .title h2:before {
+    background-color: #008ecd;
+    content:"\f099";
+}
+.block_heritage .header .title h2:before {
+    background-color: #3e647e;
+    content:"\f02d";
+}
+.block_graph_stats .header .title h2:before {
+    background-color: #38B9EC;
+    content:"\f012";
+}
+.block_wikipedia .header .title h2:before {
+    background-color: #29A294;
+    content:"\f002";
+}
+.block_site_main_menu .header .title h2:before {
+    background-color: [[setting:maincolor]];
+    content:"\f14e";
+}
+
+/* =========================================================== *
+group Tabs
+============================================================== */
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+.nav>.disabled>a {
+	color: #555;
+	background: #fff;
+}
+.nav>.disabled>a:hover {
+	border: 1px solid #eee;
+} 
+.nav-tabs>li>a {
+color: #fff;
+cursor: default;
+background-color: [[setting:maincolor]];
+border: 1px solid #eee;
+border-bottom-color: transparent;
+}
+.nav-tabs>li>a:hover {
+	background-color: [[setting:mainhovercolor]];
+}
+
+/* =========================================================== *
+social media
+============================================================== */
+.container-fluid.socials-header {
+    padding-left: 0;
+    padding-right: 0;
+}
+.socials-header .socials {
+    background-color: #fbfbfb;
+    border-bottom: 1px solid #e9e9e9;
+}
+.socials-header .social_icons.pull-right {
+    padding-right:20px;
+}
+.socials-header .social_contact {
+    padding-left:20px;
+}
+#page-footer .social_icons.pull-right {
+    padding-right: 15px;
+}
+.socials-header .socials .social_contact i {
+	color:[[setting:socials_color]];
+    font-size: 1.35em;
+    line-height: 35px;
+}
+.socials .social_contact a.social_contact_web {
+	padding-right:20px;
+}
+#page-footer .socials .social_contact i {
+	font-size: 1.25em;
+    padding: 0 0 0 20px;
+}
+.socials-header .socials .social_icons a.social {
+	color:[[setting:socials_color]];
+    float: left;
+    font-size: 1.35em;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+    text-align: center;
+    width: 40px;
+}
+#page-footer .footerlinks .socials .social_icons a.social {
+    color: [[setting:copyrightcolor]];
+}
+#page-footer .socials .social_icons a.social {
+    background:[[setting:socials_color]];
+    border-radius: 2px;
+    display: inline-block;
+    float: left;
+    font-size: 1.25em;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease 0s;
+    width: 25px;
+}
+.block .social_icons a.social {
+    background:#999999;
+	color:#E5E5E5;
+    border-radius: 2px;
+    display: inline-block;
+    float: left;
+    font-size: 1.25em;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 25px;
+}
+#page-footer .block .social_icons a.social {
+    color: [[setting:footercolor]];
+}
+.social_icons a.social {
+transition: background 0.3s ease 0s, color 0.3s ease 0s;
+}
+a.social.fa-facebook:hover {
+	color:#fff !important;
+    background:#3B5998 !important;
+}
+a.social.fa-twitter:hover {
+	color:#fff !important;
+    background:#00ACED !important;
+}
+a.social.fa-youtube:hover {
+	color:#fff !important;
+    background:#CB3429 !important;
+}
+a.social.fa-google-plus:hover {
+	color:#fff !important;
+    background:#DD4B39 !important;
+}
+a.social.fa-instagram:hover {
+	color:#fff !important;
+    background:#517FA4 !important;
+}
+a.social.fa-flickr:hover {
+	color:#fff !important;
+    background:#FF0084 !important;
+}
+a.social.fa-pinterest:hover {
+	color:#fff !important;
+    background:#CB2027 !important;
+}
+	
+
+/* =========================================================== *
+Bootstrap
+============================================================== */
+.useralerts [class^="icon-stack"] {
+	float: left;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.useralerts .title {
+	font-weight: bold;
+	margin-right: 10px;
+}
+.alert {
+    border-radius: 2px;
+	padding: 8px;
+}
+.alert.alert-info.demo {
+	color:#444;
+	margin-top:20px;
+}
+.course-content ul.topics li.section .left, .course-content ul.topics li.section .right {
+    padding: 0;
+    text-align: left;
+    width: inherit;
+}
+.carousel-control {
+	width: 40px !important;
+	text-align: center !important;
+}
+.carousel-caption {
+	color: #fefefe;
+}
+.carousel-caption h3 {
+	color: #fefefe;
+	margin-top:0;
+}
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 1px 8px;
+}
+.panel-body {
+    padding: 8px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-default > .panel-heading {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    color: #777 !important;
+}
+.panel-primary {
+    border-color: #428bca;
+}
+.panel-primary > .panel-heading {
+    background-color: #428bca;
+    border-color: #428bca;
+}
+.panel-primary > .panel-heading > .panel-title {
+    color: #fff !important;
+}
+.panel-success {
+    border-color: #d6e9c6;
+}
+.panel-success > .panel-heading {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.panel-success > .panel-heading > .panel-title {
+    color: #3c763d !important;
+}
+.panel-info {
+    border-color: #bce8f1;
+}
+.panel-info > .panel-heading {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.panel-info > .panel-heading > .panel-title {
+    color: #31708f !important;
+}
+.panel-warning {
+    border-color: #faebcc;
+}
+.panel-warning > .panel-heading {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.panel-warning > .panel-heading > .panel-title {
+    color: #8a6d3b !important;
+}
+.panel-danger {
+    border-color: #ebccd1;
+}
+.panel-danger > .panel-heading {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.panel-danger > .panel-heading > .panel-title {
+    color: #a94442;
+}
+.panel-group > .panel {
+	margin-bottom:4px;
+}
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: height 0.35s ease 0s;
+}
+.nav-tabs, .nav-pills {
+    text-align: left !important;
+}
+.row-fluid.frontpage {
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+/* =========================================================== *
+Responsive & General Adjustments
+============================================================== */
+.pagelayout-frontpage .section .activity .mod-indent-outer {
+    padding-left: 0;
+}
+.site-topic ul.section, .course-content ul.section, ul.section {
+    margin: 0;
+}
+.section .activity .mod-indent-outer {
+    padding-left: 0;
+}
+.section .activity .editing_move {
+    left: -24px;
+}
+.course-content ul.topics li.section .summary {
+    margin-left: 0;
+}
+.moodle-actionmenu.show[data-enhanced] .menu a:hover {
+	background-color: #e5e5e5;
+    border-radius: 0;
+    color: #333;
+}
+#adminsettings h3 {
+	color: #444;
+	font-size: 1.4em;
+}
+.path-site .span12 li.activity > div, .path-course-view .span12 li.activity > div {
+    padding: 0;
+}
+.editing .section .activity .contentwithoutlink, .editing .section .activity .activityinstance {
+    padding-right: 100px;
+}
+.span12 .section .label .contentwithoutlink, span12 .section .label .activityinstance {
+    padding-right: 0;
+}
+#section_footer .nav_icon {
+    margin-bottom: -25px;
+}
+.container-fluid {
+    max-width: none;
+}
+.container-fluid.full {
+    padding-left: 0;
+    padding-right: 0;
+}
+.section .activity .actions {
+    background:rgba(255,255,255,0.8);
+}
+.responsive-video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.responsive-video {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 0px;
+	height: 0;
+	overflow: hidden;
+}
+.message .messagearea {
+    border-left: medium none;
+    padding-left: 0;
+    width: 70%;
+}
+body.ie7 #block-login input[type=text], body.ie7 #block-login input[type=password] {
+	font-family: sans-serif !important;
+	width:157px !important;
+}
+body.ie8 #block-login input[type=text], body.ie8 #block-login input[type=password] {
+	font-family: sans-serif !important;
+}
+body#page-mod-feedback-print #page {
+    background: #fff none repeat scroll 0 0;
+    margin: 0 auto;
+    max-width: 95%;
+    padding: 0 15px;
+}
+@media(max-width:979px){
+	.navbar .nav-divider-left, .navbar .nav-divider-right {display:none;}
+	.navbar .nav > li > a {border:none;}
+	.nav-collapse .dropdown-menu li + li a {margin-bottom: 0;}
+	.navbar .nav-collapse > .nav .dropdown-menu {margin: 0 0 0 15px;}
+	.nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {font-weight: normal;}
+	.navbar .nav-collapse.active {border-top: medium none;}
+	.navbar .brand {margin: 0;}
+	.navbar .container-fluid {padding: 0;}
+	.navbar .btn-navbar {margin-right: 10px;}
+	.navbar #search input {background: none repeat scroll 0 0 rgba(250, 250, 250, 0.1);}
+	.navbar #search {margin-right: 0;}
+	.navbar .nav-collapse.active .nav .dropdown-submenu:hover .dropdown-menu, .navbar .nav-collapse.active .nav .dropdown-menu .dropdown-submenu:hover .dropdown-menu {display: inherit;}
+	.nav-collapse .dropdown-submenu > .dropdown-menu {display:block;}
+	.navbar .dropdown-menu {border-bottom: none;}
+	.nav > .dropdown > .dropdown-menu {border-bottom 4px solid [[setting:maincolor]];}
+}
+@media(max-width:767px){
+	.navbar {padding: 0;}
+	.login-header {margin-right:8px;}
+	body {padding-left: 10px;padding-right: 10px;}
+	#wrapper {width: 100%;max-width: inherit;}
+	#page {padding: 0 10px;}
+	#block-login {margin-right: 10px;}
+	#page-navbar {margin-top: -20px;}
+}
+@media(max-width:480px){	
+	.logo-header {float: none; text-align: center;}
+	.login-header {margin:0 auto;float:none;}	
+}
+
+/*================================================== * 
+Additional CSS for RTL Support
+=====================================================*/
+.bx-wrapper {
+    direction: ltr;
+}
+.dir-rtl .camera_wrap {
+    direction:ltr;
+}
+.dir-rtl .cameraContents .camera_caption h1 {
+    padding: 0 10px;
+}
+.dir-rtl .block .header .title h2:before {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+.dir-rtl .mform fieldset.collapsible legend a.fheader {
+    margin-right: 0;
+}
+.dir-rtl .navbar .brand {margin: 0 -20px 0 0;}
+@media(max-width:979px){
+	.dir-rtl .navbar .brand {margin: 0;}
+}
+.dir-rtl .navbar #search {
+    float: left;
+    margin-left: -20px;
+    margin-right: 0;
+}
+.dir-rtl .blocknumber_box .blocknumber_icon {
+    float: right;
+    margin-left: 20px;
+}
+.dir-rtl .blocknumber_box {
+    text-align: right;
+}
+.dir-rtl .bx-prev {
+    left: 36px;
+    right: inherit;
+}
+.dir-rtl .bx-next {
+    left: 0;
+    right: inherit;
+}
+.dir-rtl .profileblock ul.nav {
+    margin-right: 0;
+}
+.dir-rtl ul.profiledrop li a i {
+    margin-left: 12px;
+    margin-right: 0;
+}
+.dir-rtl .spotlight-full {
+    margin-left:-27px !important;
+    margin-right:-55px !important;	
+}
+.dir-rtl.content-only #region-main.span9, .dir-rtl.empty-region-side-pre #region-bs-main-and-pre.span9, .dir-rtl.empty-region-side-post #region-bs-main-and-post.span9
+{
+	width:100%;
+}
+.dir-rtl.empty-region-side-pre.used-region-side-post #region-bs-main-and-post, .dir-rtl.empty-region-side-post.used-region-side-pre #region-bs-main-and-pre {
+	width:74.359%;
+}
+.dir-rtl.empty-region-side-post.used-region-side-pre #region-main.span8 {
+    width: 74.359% !important;
+}
+@media(max-width:767px){
+	.dir-rtl .spotlight-full {margin-left: -17px !important;margin-right: -45px !important;}
+}
+
+[[setting:logo_res]]
+
+[[setting:pagewidth_wide]]
+
+[[setting:customcss]]
